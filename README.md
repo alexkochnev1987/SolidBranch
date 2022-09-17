@@ -5,7 +5,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 1.1. Requirements
 You need to create an application in latest version of Angular using TypeScript.
 
-
 The application will be started off the empty Angular’s project, which is created using Angular CLI.
 
 The application will use Bootstrap 4 as CSS framework, to minimize the effort of writing your own SCSS.
@@ -17,7 +16,6 @@ Summary page (“/” URL)
 
 1.2. Data structure
 The application will be built around a list of rows which will be a JS array. Each row will be represented with an object stored inside this array. Each object will have the following properties:
-
 
     {
 
@@ -45,11 +43,9 @@ The application will be built around a list of rows which will be a JS array. Ea
 
     }
 
-
 You can just copy the following JSON into the TypeScript source file and use it anywhere in the code:
 
 https://codebeautify.org/jsonviewer/cb1d6ce2
-
 
 This is a test, so this object describes an abstract “transaction”. You’re free to modify, or use different data JSON, if you have a better idea of what data structure could be.
 
@@ -62,10 +58,6 @@ The “List” page is a tab set. Each tab has a simple table. It has 2 columns.
 
 The URL of the page should be: /navigator?tab=<0..3>, where tab query parameter corresponds to a currently selected tab, and the type by which the table is filtered.
 
-
-
-
-
 2.3. Summary page
 This page is displayed at the root URL (/). It has cards, please use Bootstrap 4 “card” SCSS classes. This page uses exactly the same JSON data, as the “List” page.
 
@@ -73,4 +65,3 @@ First card is “Heading” card - it displays total number of objects and text
 Next 4 cards are very similar. They differ only by the Text and by the type of objects counted:
 Income card: displays count of type=income , “See all” is a routerlink=/navigator?tab=0
 Outcome, Loan, Investment : similar to the cards above.
-
