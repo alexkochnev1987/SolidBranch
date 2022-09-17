@@ -31,8 +31,4 @@ export class ListComponent implements OnInit {
         );
     });
   }
-
-  getValueFunction(string: string) {
-    return string;
-  }
 }

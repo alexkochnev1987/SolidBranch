@@ -14,13 +14,13 @@
   <thead class="thead-light">
     <tr>
       <th scope="col">Name</th>
-      <th scope="col">Account</th>
+      <th scope="col">Phone</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let user of data; let i = index">
       <td>{{ user.name.first + ' ' + user.name.last }}</td>
-      <td>{{ user.amount }}</td>
+      <td>{{ user.phone }}</td>
     </tr>
   </tbody>
 </table>
