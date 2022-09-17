@@ -1,0 +1,26 @@
+<ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+  <li class="nav-item" *ngFor="let tab of tabSet; let i = index">
+    <a
+      class="nav-link text-dark"
+      routerLink="./"
+      [queryParams]="{ tab: i }"
+      routerLinkActive="active"
+      >{{ tab | titlecase }}</a
+    >
+  </li>
+</ul>
+
+<table class="table text-center">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Phone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of data; let i = index">
+      <td>{{ user.name.first + ' ' + user.name.last }}</td>
+      <td>{{ user.phone }}</td>
+    </tr>
+  </tbody>
+</table>

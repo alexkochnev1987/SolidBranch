@@ -1,0 +1,31 @@
+<div class="card text-center">
+  <div class="card-header">Welcome</div>
+  <div class="card-body">
+    <p class="card-text">
+      With supporting text below as a natural lead-in to additional content.
+    </p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <p class="card-text">You have {{ transactions.total }} transactions</p>
+  </div>
+</div>
+
+<div class="card-group">
+  <div class="card" *ngFor="let users of transactions.data; let i = index" >
+    <div class="card-body">
+      <h5 class="card-title">{{ users.length }}</h5>
+      <p class="card-text">{{ userType[i] | titlecase }}</p>
+      <p class="card-text text-right">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </p>
+      <div class="card-body text-right">
+        <a
+          href="#"
+          class="btn btn-primary"
+          routerLink="navigator"
+          [queryParams]="{ tab: i }"
+          >See all</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
