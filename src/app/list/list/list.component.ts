@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
+import { filter, map, Observable, switchMap } from 'rxjs';
 import { DataStructure, User, UserType } from 'src/app/constants';
 import { QueryService } from 'src/app/services/query.service';
 
@@ -10,25 +11,26 @@ import { QueryService } from 'src/app/services/query.service';
 })
 export class ListComponent implements OnInit {
   tabSet = UserType;
-  data?: User[];
   defaultParam = '0';
+  data?: Observable<User[]>;
   constructor(
     private queryService: QueryService,
     private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe(v => {
-      const a = v as { tab: string };
-      if (a.tab) this.defaultParam = a.tab;
-      this.queryService
-        .getTransaction()
-        .subscribe(
-          data =>
-            (this.data = data.data.filter(
-              user => user.type === this.tabSet[Number(this.defaultParam)]
-            ))
-        );
-    });
+    this.data = this.route.queryParams.pipe(
+      switchMap(route =>
+        this.queryService
+          .getTransaction()
+          .pipe(
+            map(v =>
+              v.data.filter(
+                user => user.type === this.tabSet[Number(route['tab'])]
+              )
+            )
+          )
+      )
+    );
   }
 }
