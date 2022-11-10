@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { filter } from 'rxjs';
 import { Transactions, UserType } from 'src/app/constants';
 import { QueryService } from 'src/app/services/query.service';
 
