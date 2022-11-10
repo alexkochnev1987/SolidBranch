@@ -10,7 +10,7 @@
 </div>
 
 <div class="card-group">
-  <div class="card" *ngFor="let users of transactions.data; let i = index" >
+  <div class="card" *ngFor="let users of transactions.data; let i = index">
     <div class="card-body">
       <h5 class="card-title">{{ users.length }}</h5>
       <p class="card-text">{{ userType[i] | titlecase }}</p>

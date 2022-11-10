@@ -7,7 +7,7 @@ export interface DataStructure {
   data: User[];
 }
 
-export const url = '../assets/transaction.json';
+export const url = 'assets/transaction.json';
 
 export const UserType = ['income', 'outcome', 'loan', 'investment'];
 

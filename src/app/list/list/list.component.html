@@ -18,11 +18,9 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let user of (data | async)"  >
+    <tr *ngFor="let user of data | async">
       <td>{{ user.name.first + ' ' + user.name.last }}</td>
       <td>{{ user.phone }}</td>
     </tr>
   </tbody>
 </table>
-
-

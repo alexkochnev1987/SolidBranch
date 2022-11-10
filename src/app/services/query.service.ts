@@ -11,5 +11,4 @@ export class QueryService {
   getTransaction() {
     return this.http.get<DataStructure>(url);
   }
-
 }

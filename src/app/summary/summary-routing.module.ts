@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RouteNames } from '../constants';
 import { SummaryComponent } from './summary/summary.component';
 
 const routes: Routes = [{ path: '', component: SummaryComponent }];

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { filter, map, Observable, switchMap } from 'rxjs';
-import { DataStructure, User, UserType } from 'src/app/constants';
+import { map, Observable, switchMap } from 'rxjs';
+import { User, UserType } from 'src/app/constants';
 import { QueryService } from 'src/app/services/query.service';
 
 @Component({
